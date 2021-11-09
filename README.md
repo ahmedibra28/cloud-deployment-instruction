@@ -47,7 +47,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v<latest_version>/install.
 
 ---
 
--`sudo nano /etc/nginx/sites-available/<your_domain>`
+- `sudo nano /etc/nginx/sites-available/<your_domain>`
 
 > copy and paste the following:
 
@@ -103,6 +103,7 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 - `sudo apt-get install -y mongodb-org`
 - `sudo systemctl start mongod.service`
 - `sudo systemctl status mongod`
+- `sudo systemctl enable mongod`
 
 ```
 echo "mongodb-org hold" | sudo dpkg --set-selections
