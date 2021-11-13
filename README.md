@@ -58,7 +58,7 @@ server {
     listen [::]:80 default_server;
     server_name  yourdomain.com www.yourdomain.com;
 
-    access_log /home/server_logs/host.access.log main;
+    access_log /home/server_logs/host.access.log;
 
 
     location / {
