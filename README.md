@@ -54,17 +54,15 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v<latest_version>/install.
 ```shell
 server {
     #listen       80;
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name  yourdomain.com www.yourdomain.com;
+    server_name  mamosbusiness.com www.mamosbusiness.com;
 
-    access_log /home/server_logs/host.access.log;
+    access_log /root/server_logs/host.access.log;
 
 
     location / {
         proxy_set_header   X-Forwarded-For $remote_addr;
         proxy_set_header   Host $http_host;
-        proxy_pass         "http://127.0.0.1:3000";
+        proxy_pass         http://127.0.0.1:3000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -72,7 +70,6 @@ server {
         proxy_cache_bypass $http_upgrade;
 
     }
-
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   /usr/share/nginx/html;
